@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StyleStory — Outfit Planner</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        StyleStory
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero"        class="nav-link active">Home</a></li>
+        <li><a href="#wardrobe"    class="nav-link">Wardrobe</a></li>
+        <li><a href="#planner"     class="nav-link">Planner</a></li>
+        <li><a href="#builder"     class="nav-link">Builder</a></li>
+        <li><a href="#inspiration" class="nav-link">Inspiration</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO / LANDING
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Decorative floating orbs -->
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-orb hero-orb--3"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow fade-in">Your Personal Style Assistant</span>
+      <h1 class="hero-title fade-in delay-1">
+        Style Your<br /><em>Story</em>
+      </h1>
+      <p class="hero-subtitle fade-in delay-2">
+        Plan your wardrobe, build stunning outfits, and discover inspiration
+        — all in one elegant space crafted for you.
+      </p>
+      <div class="hero-actions fade-in delay-3">
+        <a href="#wardrobe" class="btn btn--primary">Explore Wardrobe</a>
+        <a href="#builder"  class="btn btn--ghost">Build an Outfit</a>
+      </div>
+
+      <!-- Mini stats -->
+      <div class="hero-stats fade-in delay-4">
+        <div class="stat">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Items</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">7</span>
+          <span class="stat-label">Days Planned</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Combinations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero visual -->
+    <div class="hero-visual fade-in delay-2">
+      <div class="hero-card-stack">
+        <div class="hero-card hero-card--back">
+          <span class="hero-card-emoji">👗</span>
+        </div>
+        <div class="hero-card hero-card--mid">
+          <span class="hero-card-emoji">👠</span>
+        </div>
+        <div class="hero-card hero-card--front">
+          <span class="hero-card-emoji">👜</span>
+          <div class="hero-card-label">Evening Look ✨</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WARDROBE SECTION
+  ═══════════════════════════════════════ -->
+  <section class="section wardrobe-section" id="wardrobe">
+    <div class="section-header">
+      <span class="section-eyebrow">Your Collection</span>
+      <h2 class="section-title">My Wardrobe</h2>
+      <p class="section-subtitle">Browse and manage your clothing collection. Click "Add to Outfit" to use an item in the builder.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="tops">Tops</button>
+      <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+      <button class="filter-btn" data-filter="shoes">Shoes</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+      <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+    </div>
+
+    <!-- Wardrobe Grid -->
+    <div class="wardrobe-grid" id="wardrobeGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WEEKLY PLANNER
+  ═══════════════════════════════════════ -->
+  <section class="section planner-section" id="planner">
+    <div class="section-header">
+      <span class="section-eyebrow">Week at a Glance</span>
+      <h2 class="section-title">Outfit Planner</h2>
+      <p class="section-subtitle">Plan your outfits for the whole week. Click any day to assign an outfit.</p>
+    </div>
+
+    <div class="planner-grid" id="plannerGrid">
+      <!-- Day columns injected by JS -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       OUTFIT BUILDER
+  ═══════════════════════════════════════ -->
+  <section class="section builder-section" id="builder">
+    <div class="section-header">
+      <span class="section-eyebrow">Create Your Look</span>
+      <h2 class="section-title">Outfit Builder</h2>
+      <p class="section-subtitle">Mix and match pieces to craft the perfect outfit, then save it to your collection.</p>
+    </div>
+
+    <div class="builder-container">
+      <!-- Selectors Panel -->
+      <div class="builder-selectors">
+        <div class="builder-field">
+          <label class="builder-label">Outfit Name</label>
+          <input
+            type="text"
+            class="builder-input"
+            id="outfitName"
+            placeholder="e.g. Sunday Brunch Look"
+          />
+        </div>
+
+        <div class="builder-field">
+          <label class="builder-label">👕 Top</label>
+          <select class="builder-select" id="selectTop">
+            <option value="">— Choose a Top —</option>
+          </select>
+        </div>
+
+        <div class="builder-field">
+          <label class="builder-label">👖 Bottom</label>
+          <select class="builder-select" id="selectBottom">
+            <option value="">— Choose a Bottom —</option>
+          </select>
+        </div>
+
+        <div class="builder-field">
+          <label class="builder-label">👟 Shoes</label>
+          <select class="builder-select" id="selectShoes">
+            <option value="">— Choose Shoes —</option>
+          </select>
+        </div>
+
+        <div class="builder-field">
+          <label class="builder-label">👜 Accessory</label>
+          <select class="builder-select" id="selectAccessory">
+            <option value="">— Choose Accessory —</option>
+          </select>
+        </div>
+
+        <button class="btn btn--primary builder-save-btn" id="saveOutfitBtn">
+          Save Outfit ✦
+        </button>
+        <button class="btn btn--ghost builder-clear-btn" id="clearOutfitBtn">
+          Clear
+        </button>
+      </div>
+
+      <!-- Preview Panel -->
+      <div class="builder-preview">
+        <div class="preview-card">
+          <div class="preview-label">Live Preview</div>
+          <div class="mannequin" id="mannequin">
+            <div class="mannequin-slot mannequin-top"    id="previewTop">👕</div>
+            <div class="mannequin-slot mannequin-bottom" id="previewBottom">👖</div>
+            <div class="mannequin-slot mannequin-shoes"  id="previewShoes">👟</div>
+            <div class="mannequin-slot mannequin-acc"    id="previewAcc">—</div>
+          </div>
+          <div class="preview-name" id="previewName">Your Outfit</div>
+        </div>
+
+        <!-- Saved outfits -->
+        <div class="saved-outfits">
+          <h3 class="saved-outfits-title">Saved Outfits</h3>
+          <div class="saved-outfits-list" id="savedOutfitsList">
+            <p class="empty-state">No saved outfits yet. Build one above! 🎨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STYLE INSPIRATION / LOOKBOOK
+  ═══════════════════════════════════════ -->
+  <section class="section inspiration-section" id="inspiration">
+    <div class="section-header">
+      <span class="section-eyebrow">Curated Looks</span>
+      <h2 class="section-title">Style Inspiration</h2>
+      <p class="section-subtitle">Discover curated outfits for every occasion. Find your next favourite look.</p>
+    </div>
+
+    <div class="inspiration-grid" id="inspirationGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">✦</span> StyleStory
+      </div>
+      <p class="footer-tagline">Style Your Story — One Outfit at a Time.</p>
+      <p class="footer-copy">&copy; 2024 StyleStory. Made with ♥ and great taste.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       PLANNER MODAL
+  ═══════════════════════════════════════ -->
+  <div class="modal-overlay" id="plannerModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <h3 class="modal-title" id="modalTitle">Plan your outfit for Monday</h3>
+
+      <div class="modal-body">
+        <p class="modal-label">Choose items for this day:</p>
+
+        <div class="modal-selectors">
+          <div class="builder-field">
+            <label class="builder-label">👕 Top</label>
+            <select class="builder-select" id="modalTop">
+              <option value="">— Choose a Top —</option>
+            </select>
+          </div>
+          <div class="builder-field">
+            <label class="builder-label">👖 Bottom</label>
+            <select class="builder-select" id="modalBottom">
+              <option value="">— Choose a Bottom —</option>
+            </select>
+          </div>
+          <div class="builder-field">
+            <label class="builder-label">👟 Shoes</label>
+            <select class="builder-select" id="modalShoes">
+              <option value="">— Choose Shoes —</option>
+            </select>
+          </div>
+          <div class="builder-field">
+            <label class="builder-label">👜 Accessory</label>
+            <select class="builder-select" id="modalAccessory">
+              <option value="">— Choose Accessory —</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-preview" id="modalPreview">
+          <span id="modalPreviewEmojis">Pick items above to preview 👆</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn--primary" id="modalSave">Save to Day</button>
+        <button class="btn btn--ghost"   id="modalCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TOAST NOTIFICATION
+  ═══════════════════════════════════════ -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toastMessage">Outfit saved!</span>
+  </div>
+
+  <!-- Main JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>
